@@ -1,12 +1,12 @@
 src=$(wildcard ./*.cpp)                                                                                                             
-obj=$(patsubst ./%.cpp,./%.o ,$(src))
+obj=$(patsubst ./%.cpp, % ,$(src))
  
 CC=g++
 CFLAGS=-Wall
 
 all:$(obj) 
 
-$obj:%.o 
+$obj:%:%.o 
 	$(CC) $< -o $@ $(CFLAGS)
 
 
